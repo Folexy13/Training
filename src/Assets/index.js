@@ -13,3 +13,5 @@ export { default as img9 } from "./img9.png";
 export { default as img10 } from "./img10.png";
 export { default as img11 } from "./img11.png";
 export { default as home } from "./home.jpg";
+export { default as Nig } from "./Nig.png";
+export { default as check } from "./check.png";

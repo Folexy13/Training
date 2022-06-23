@@ -1,1 +1,2 @@
-export {default as Footer} from './Footer/Footer.jsx';
+export { Footer } from "./Footer/Footer.jsx";
+export { Modal } from "./Modal/Modal";
