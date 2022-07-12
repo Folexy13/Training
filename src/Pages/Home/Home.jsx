@@ -1,43 +1,44 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { ava1, ava2, ava3, img11, img5, img7, img8, img9 } from "../../Assets";
-import { Footer, Modal } from "../../Components";
+import React, { useRef } from "react";
+import { Container, Row, Col, Carousel } from "react-bootstrap";
+import {
+  ava1,
+  ava2,
+  ava3,
+  img5,
+  img7,
+  img8,
+  img9,
+  logo,
+  training,
+  training2,
+} from "../../Assets";
+import { Accordion, Footer } from "../../Components";
+import { ROUTES } from "../../Routes";
 import "./style.scss";
 
 export default function Home() {
-  const [dot, setDots] = useState([]);
-  const [slide, setSlide] = useState([]);
-  const [show, setShow] = useState(false);
-  const handleShow = () => {
-    setShow(true);
-  };
-  const close = () => {
-    setShow(false);
-  };
-  const image1 = useRef();
   const image2 = useRef();
-  const image3 = useRef();
-  const dot1 = useRef();
-  const dot2 = useRef();
-  const dot3 = useRef();
-  // console.log(image2)
-  useEffect(() => {
-    setDots([dot1.current, dot2.current, dot3.current]);
-    setSlide([image1.current, image2.current, image3.current]);
-  }, []);
 
   return (
     <>
-      <Modal click={show} toggle={close} />
-
-      <div
-        className="home bg-light"
-        style={{ overflow: show ? "hidden" : "unset" }}
-      >
+      {/* <Loader2 /> */}
+      <div className="home bg-light">
         <div ref={image2} className="homeMain">
-          <Container>
-            <Row className="justify-between">
-              <Col md={12}>
+          <div className="flex">
+            <img src={logo} alt="" width={150} style={{ marginLeft: "30px" }} />
+
+            <a
+              href="https://res.cloudinary.com/folajimidev/image/upload/v1656262328/pdf/training_ctui9r.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button>Download Brochure</button>
+            </a>
+          </div>
+          <Carousel variant="dark" fade>
+            <Carousel.Item interval={1000}>
+              <img className="d-block w-100" src={training} alt="First slide" />
+              <Carousel.Caption>
                 <div className="middle__container text-center w-100">
                   <h1 className="main__header">
                     Welcome to Toltem Training Center
@@ -49,12 +50,12 @@ export default function Home() {
                   <p>
                     It's Evident that the world is revolving around technology
                     today and amazignly at a higher rate <br />
-                    Grab this Offer now
+                    Learn Web Development/Design For free at our Hub <br /> Grab
+                    this Offer now.
                   </p>
                   <div className="w-100 link mt-2 d-flex align-items-center gap-3 justify-content-center m-auto">
                     <a
-                      href="/#"
-                      onClick={handleShow}
+                      href={ROUTES.ABOUT}
                       className="text-decoration-none bg-white rounded-pill"
                     >
                       Learn a skill
@@ -79,17 +80,113 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </Col>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item interval={1000}>
+              <img
+                className="d-block w-100"
+                src={training2}
+                alt="Second slide"
+              />
+
+              <Carousel.Caption>
+                <div className="middle__container text-center w-100">
+                  <h1 className="main__header">
+                    Welcome to Toltem Training Center
+                  </h1>
+                  <h1>
+                    Where we teach you <br />
+                    The in-demand Technology skill
+                  </h1>
+                  <p>
+                    It's Evident that the world is revolving around technology
+                    today and amazignly at a higher rate <br />
+                    Learn Web Development/Design For free at our Hub <br /> Grab
+                    this Offer now.
+                  </p>
+                  <div className="w-100 link mt-2 d-flex align-items-center gap-3 justify-content-center m-auto">
+                    <a
+                      href={ROUTES.ABOUT}
+                      className="text-decoration-none bg-white rounded-pill"
+                    >
+                      Learn a skill
+                    </a>
+                    <div className="arrow mb-4">
+                      <img src={img5} alt="img.jpg" className=" w-100" />
+                    </div>
+                  </div>
+                  <div className="mt-3 avatar">
+                    <div className="img1">
+                      <img src={ava1} alt="img.jpg" className="w-100 " />
+                    </div>
+                    <div className="img1">
+                      <img src={ava2} alt="img.jpg" className="w-100 " />
+                    </div>
+                    <div className="img1">
+                      <img src={ava3} alt="img.jpg" className="w-100 " />
+                    </div>
+                    <div className="d-flex align-items-center gap-2 text-white ms-3">
+                      <span className="me-2 skyBlue">100 +</span>
+                      <span className="text-white">Professionals</span>
+                    </div>
+                  </div>
+                </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item interval={1000}>
+              <img className="d-block w-100" src={training} alt="Third slide" />
+
+              <Carousel.Caption>
+                <div className="middle__container text-center w-100">
+                  <h1 className="main__header">
+                    Welcome to Toltem Training Center
+                  </h1>
+                  <h1>
+                    Where we teach you <br />
+                    The in-demand Technology skill
+                  </h1>
+                  <p>
+                    It's Evident that the world is revolving around technology
+                    today and amazignly at a higher rate <br />
+                    Learn Web Development/Design For free at our Hub <br /> Grab
+                    this Offer now.
+                  </p>
+                  <div className="w-100 link mt-2 d-flex align-items-center gap-3 justify-content-center m-auto">
+                    <a
+                      href={ROUTES.ABOUT}
+                      className="text-decoration-none bg-white rounded-pill"
+                    >
+                      Learn a skill
+                    </a>
+                    <div className="arrow mb-4">
+                      <img src={img5} alt="img.jpg" className=" w-100" />
+                    </div>
+                  </div>
+                  <div className="mt-3 avatar">
+                    <div className="img1">
+                      <img src={ava1} alt="img.jpg" className="w-100 " />
+                    </div>
+                    <div className="img1">
+                      <img src={ava2} alt="img.jpg" className="w-100 " />
+                    </div>
+                    <div className="img1">
+                      <img src={ava3} alt="img.jpg" className="w-100 " />
+                    </div>
+                    <div className="d-flex align-items-center gap-2 text-white ms-3">
+                      <span className="me-2 skyBlue">100 +</span>
+                      <span className="text-white">Professionals</span>
+                    </div>
+                  </div>
+                </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+          <Container>
+            <Row className="justify-between">
+              <Col md={12}></Col>
             </Row>
           </Container>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="rgb(2, 2, 29)"
-            fill-opacity="1"
-            d="M0,288L60,288C120,288,240,288,360,277.3C480,267,600,245,720,224C840,203,960,181,1080,192C1200,203,1320,245,1380,266.7L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-          ></path>
-        </svg>
         <div className="homeSecond pt-5">
           <Container>
             <h1 className="main__header">About Us</h1>
@@ -106,13 +203,11 @@ export default function Home() {
                   <h2>Mission</h2>
                   <div className="text-center w-100">
                     <small>
-                      To build long term reltionship with our customers and
-                      clients,and <br />
-                      provide exceptional customer services by pursuring
-                      business through innovation and
+                      To build long term reltionship with our customers <br />{" "}
+                      and clients,and provide exceptional customer <br />{" "}
+                      services by pursuring business through innovation and
                       <br />
-                      advanced technology.
-                      <br /> choice anytime any day.
+                      advanced technology. choice anytime any day.
                     </small>
                   </div>
                 </Col>
@@ -143,7 +238,7 @@ export default function Home() {
                 training materials
               </h5>
               <div className="community__link mt-5">
-                <a href="/#" onClick={handleShow} className="enrolBtn">
+                <a href={ROUTES.ABOUT} className="enrolBtn">
                   <button
                     type="button"
                     className="diff"
@@ -175,14 +270,14 @@ export default function Home() {
                       Are you new to web development/design? We gat you covered{" "}
                       <br />
                       <br />
-                      Enrol for our training In Web Development <br />
-                      and web design using the latest technology,
+                      Enrol for our training in Web Development <br />
+                      and web design using the latest technology
                       <br />
                       <br></br>
                       Learn From the best,experienced and seasonal developers
                     </p>
 
-                    <a href="/#" onClick={handleShow} className="enrolBtn">
+                    <a href={ROUTES.ABOUT} className="enrolBtn">
                       <button type="button">Enrol Now</button>
                     </a>
                   </div>
@@ -204,8 +299,8 @@ export default function Home() {
                       hand-on experiences
                       <br />
                     </p>
-                    <a href="/#" onClick={handleShow} className="enrolBtn">
-                      <button type="button" className="diff">
+                    <a href={ROUTES.ABOUT} className="enrolBtn">
+                      <button type="button" className="diff" disabled>
                         Enrol Now
                       </button>
                     </a>
@@ -227,7 +322,7 @@ export default function Home() {
                       <br />
                       using latest technology
                     </p>
-                    <a href="/#" onClick={handleShow} className="enrolBtn">
+                    <a href={ROUTES.ABOUT} className="enrolBtn">
                       <button type="button">Enrol Now</button>
                     </a>
                   </div>
@@ -238,45 +333,65 @@ export default function Home() {
 
           <div className="team mt-5">
             <Container>
-              <h1 className="text-center">OUR INESTIMABLE TEAM</h1>
-              <div className="mt-4 team__container">
-                <div ref={image1} className="team__img">
-                  <img src={img11} alt="img.jpg" className="w-100" />
-                  <h6 className="mt-4">Adedapo Tiamiyu</h6>
-                  <p className="mt-1">Founder</p>
-                </div>
-                <div ref={image2} className="team__img">
-                  <img src={img11} alt="img.jpg" className="w-100" />
-                  <h6 className="mt-4">Adedapo Tiamiyu</h6>
-                  <p className="mt-1">Founder</p>
-                </div>
-                <div ref={image3} className="team__img">
-                  <img src={img11} alt="img.jpg" className="w-100" />
-                  <h6 className="mt-4">Adedapo Tiamiyu</h6>
-                  <p className="mt-1">Founder</p>
-                </div>
-                <div className="team__img">
-                  <img src={img11} alt="img.jpg" className="w-100" />
-                  <h6 className="mt-4">Adedapo Tiamiyu</h6>
-                  <p className="mt-1">Founder</p>
-                </div>
-                <div className="team__img">
-                  <img src={img11} alt="img.jpg" className="w-100" />
-                  <h6 className="mt-4">Adedapo Tiamiyu</h6>
-                  <p className="mt-1">Founder</p>
-                </div>
-                <div className="team__img">
-                  <img src={img11} alt="img.jpg" className="w-100" />
-                  <h6 className="mt-4">Adedapo Tiamiyu</h6>
-                  <p className="mt-1">Founder</p>
-                </div>
-              </div>
-              {/* The dots/circles */}
-              <div className="mt-4" style={{ textAlign: "center" }}>
-                <span ref={dot1} className="dot"></span>
-                <span ref={dot2} className="dot"></span>
-                <span ref={dot3} className="dot"></span>
-              </div>
+              <h1 className="text-center">Frequently Asked Questions</h1>
+              <Accordion
+                title={"How can I register?"}
+                label="To register, click on the Enroll Now  button. You will be required to input your accurate details on the application form. Proceed to make payment after registration "
+              />
+              <Accordion
+                title={"After registration what next?"}
+                label="Once you have successfully registered and made payment , your payment will be confirmed within 48 hours. After confirmation a home study kit with all the materials you need for the assessment will be sent to you via your email. Please make sure you provide a valid email address while applying and check your spam for emails from us. Also endeavor to thoroughly study the materials provided in the home study kit as your assessment test will be based on the materials."
+              />
+              <Accordion
+                title="How much is the registration fee?"
+                label={"Registration fee is N15, 000 naira only"}
+              />
+              <Accordion
+                title="When will the classes start?"
+                label={
+                  "Training  will commence in August, 2022. The actual date will be communicated with applicants."
+                }
+              />
+              <Accordion
+                title="What is the duration of the course?"
+                label={"The duration of the course is 12 months."}
+              />
+              <Accordion
+                title="Will I get a Certificate at the end of the training?"
+                label={
+                  "Yes, you will. At the  end of the 12 weeks  training and post training assessment, participants will be given a certificate"
+                }
+              />
+              <Accordion
+                title="What qualifies me to get accepted into the program?"
+                label={
+                  "To get accepted into the program, you need to have a minimum of a HighSchool/Secondary School certificate, be computer literate and pass our pre- training assessment tests. If you are about to complete your high school or secondary education, you can apply as well."
+                }
+              />
+              <Accordion
+                title="How much is the tuition fee?"
+                label={
+                  "Tuition fee has been waived for this training. All you need to pay for as far as the training program is concerned  is pay for  registration which is N15,000 naira only. "
+                }
+              />
+              <Accordion
+                title="Why  is the training free?"
+                label={
+                  "Toltem training is free because we are not just interested in giving you this rare opportunity to learn web development but also to enable you to register for our mentorship program which will require a subsidized fee. "
+                }
+              />
+              <Accordion
+                title="Is the certificate recognisable anywhere?"
+                label={
+                  "Yes, it is. We have partnered with reputable higher institutions to ensure credibility."
+                }
+              />
+              <Accordion
+                title="Where will the classes take place?"
+                label={
+                  "Majority of the classes will be held in our training centers."
+                }
+              />
             </Container>
           </div>
         </div>

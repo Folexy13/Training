@@ -1,0 +1,35 @@
+.about {
+  margin: 0;
+  padding: 40px 0;
+  background: url("../../Assets/home.webp") no-repeat;
+  position: relative;
+  background-size: cover;
+  min-height: 100vh;
+  @media (max-width: 700px) {
+    padding: 40px 10px;
+  }
+  .main {
+    background: #fff;
+    color: #002;
+    border-radius: 5px;
+    padding: 20px 40px;
+    min-height: 100vh;
+  }
+  button {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 30px auto;
+    padding: 10px;
+    background: #002;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+  }
+}

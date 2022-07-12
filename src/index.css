@@ -12,3 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: "Product Sans";
+  src: local("Product Sans"),
+    url("./fonts/product-sans/Product Sans Bold Italic.ttf") format("truetype");
+  font-weight: bold;
+}

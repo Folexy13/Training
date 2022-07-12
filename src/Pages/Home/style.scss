@@ -1,4 +1,6 @@
 .home {
+  font-family: "Product sans";
+  color: #fff;
   h1 {
     font-family: "Playfair Display";
     font-style: normal;
@@ -14,17 +16,45 @@
     font-size: 64px !important;
     margin: 60px auto;
     text-align: center;
+    @media (max-width: 600px) {
+      font-size: 40px !important;
+    }
   }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    position: sticky;
+    background: indigo;
+    @media (max-width: 700px) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
 
+    img {
+      height: 100%;
+    }
+    button {
+      padding: 10px 40px;
+      background: rgb(40, 148, 31);
+      border: 0;
+      border-radius: 5px;
+      color: #fff;
+      box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.199);
+      @media (max-width: 700px) {
+        margin-top: 50px;
+      }
+    }
+  }
   .homeMain {
-    height: 62vh;
+    min-height: 100vh;
     position: relative;
-
-    background: linear-gradient(to right, rgb(2, 2, 29), rgb(2, 2, 29)),
-      url(../../Assets/img2.png);
-    background-size: cover;
     @media (max-width: 1300px) {
-      height: 73vh;
+      min-height: 73vh;
+      height: unset;
+      @media screen {
+      }
       @media (max-width: 802px) {
         height: unset;
         min-height: 80vh;
@@ -34,7 +64,7 @@
     .colBorder {
       border: 2px solid black;
     }
-    padding-top: 100px;
+    // padding-top: 100px;
     padding-bottom: 50px;
     .left__image__container1 {
       width: 100%;
@@ -173,7 +203,7 @@
       &__container {
         background: #fff;
         box-shadow: 0px 0px 100px rgba(2, 2, 29, 0.336);
-        height: 412px;
+        // height: 412px;
         border-radius: 5px;
         h6 {
           font-weight: 800 !important;
@@ -208,7 +238,7 @@
         background: #002;
         border-radius: 5px;
         color: #fff;
-        height: 412px;
+        // height: 412px;
         h6 {
           font-weight: 800;
         }
@@ -216,7 +246,7 @@
       .card__container3 {
         background: #fff;
         border-radius: 5px;
-        height: 412px;
+        // height: 412px;
         h6 {
           font-weight: 800;
         }
@@ -312,6 +342,9 @@
       color: #fff;
       border: none;
       margin: 20px 0;
+      &:disabled {
+        background: rgba(128, 128, 128, 0.774) !important;
+      }
       &.diff {
         background: #fff;
         color: #002;
@@ -454,7 +487,7 @@
   }
 }
 
-@media (max-width: 461px) {
+@media (max-width: 600px) {
   .home {
     .homeSecond {
       .team {
@@ -486,7 +519,7 @@
       .community {
         .community__text {
           h5 {
-            font-size: 30px !important;
+            font-size: 18px !important;
           }
         }
       }
@@ -506,13 +539,13 @@
   }
 }
 
-@media (max-width: 401px) {
+@media (max-width: 600px) {
   .home {
     .homeSecond {
       .community {
         .community__text {
           h5 {
-            font-size: 25px !important;
+            font-size: 18px !important;
           }
         }
       }
@@ -617,4 +650,8 @@
       }
     }
   }
+}
+//countering bootstrap styles
+.carousel-caption {
+  bottom: 26.7rem;
 }
